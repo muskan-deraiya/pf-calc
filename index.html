@@ -100,17 +100,22 @@
 
                         <!-- UAN + PF No row -->
                         <div class="row row-spacing">
-
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="uan" class="form-label">UAN</label>
-                                    <input type="text" class="form-control" id="uan">
+                            <div class="row row-spacing">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="uan" class="form-label">UAN (Universal Account Number)</label>
+                                        <input type="text" class="form-control" id="uan"
+                                            placeholder="e.g., 100501234567" maxlength="12">
+                                        <div class="help-text">Unique Identification Number for PF</div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="pfno" class="form-label">PF Account Number</label>
-                                    <input type="text" class="form-control" id="pfno">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="pfno" class="form-label">PF Account Number</label>
+                                        <input type="text" class="form-control" id="pfno"
+                                            placeholder="e.g., DL/2021/001234">
+                                        <div class="help-text">Provident Fund Account Number</div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -235,7 +240,8 @@
                                 <h5 class="mb-3">Salary Summary</h5>
                                 <p><strong>Gross Salary:</strong> ₹ <span id="gross"></span></p>
                                 <p id="empPFRow"><strong>Employee PF (12%):</strong> ₹ <span id="empPF"></span></p>
-                                <p id="employerPFRow"><strong>Employer PF (12%):</strong> ₹ <span id="employerPF"></span></p>
+                                <p id="employerPFRow"><strong>Employer PF (12%):</strong> ₹ <span
+                                        id="employerPF"></span></p>
                                 <p><strong>Professional Tax:</strong> ₹ <span id="professionalTax"></span></p>
                                 <p><strong>Net Salary:</strong> ₹ <span id="netSal"></span></p>
 
