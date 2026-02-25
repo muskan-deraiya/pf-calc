@@ -42,6 +42,8 @@ function calculateFromCTC() {
         if (basic >= 15000) {
             basicpf = 15000;
             pf = basicpf * 0.12;
+        }else{
+            pf = basic * 0.12;
         }
     }
 
@@ -95,11 +97,15 @@ function downloadPDF() {
 
     const gross = basic + hra + medical + bonus + conveyance + other;
 
-    // PF Logic
+    // Calculate PF based on Basic Salary
     let pf = 0;
     if (pfOption === "yes") {
-        let pfBasic = (basic >= 15000) ? 15000 : basic;
-        pf = pfBasic * 0.12;
+        if (basic >= 15000) {
+            basicpf = 15000;
+            pf = basicpf * 0.12;
+        }else{
+            pf = basic * 0.12;
+        }
     }
 
     const totalDeductions = (pf * 2) + pt; // Only employee PF
