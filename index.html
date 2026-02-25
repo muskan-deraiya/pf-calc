@@ -77,42 +77,57 @@
                         </div>
                     </div>
 
-                    <!-- Regulatory Details Section -->
+                    <!-- PF OPTION -->
                     <div class="section-title">
-                        <i class="fas fa-file-contract"></i> Regulatory Details
+                        <i class="fas fa-shield-alt"></i> PF Settings
                     </div>
 
-                    <div class="row row-spacing">
+                    <div class="row mb-3">
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="uan" class="form-label">UAN (Universal Account Number)</label>
-                                <input type="text" class="form-control" id="uan" placeholder="e.g., 100501234567"
-                                    maxlength="12">
-                                <div class="help-text">Unique Identification Number for PF</div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="pfno" class="form-label">PF Account Number</label>
-                                <input type="text" class="form-control" id="pfno" placeholder="e.g., DL/2021/001234">
-                                <div class="help-text">Provident Fund Account Number</div>
-                            </div>
+                            <label class="form-label">PF Available?</label>
+                            <select class="form-select" id="pfOption" onchange="togglePF()">
+                                <option value="yes" selected>Yes</option>
+                                <option value="no">No</option>
+                            </select>
                         </div>
                     </div>
 
-                    <div class="row row-spacing">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="esi" class="form-label">ESI Number</label>
-                                <input type="text" class="form-control" id="esi" placeholder="e.g., 1234567890001234">
-                                <div class="help-text">Employee State Insurance Number</div>
-                            </div>
+                    <div id="pfSection">
+                        <!-- Regulatory Details Section -->
+                        <div class="section-title">
+                            <i class="fas fa-file-contract"></i> Regulatory Details
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="bank" class="form-label"><i class="fas fa-university"></i> Bank Account
-                                    Number</label>
-                                <input type="text" class="form-control" id="bank" placeholder="e.g., 1234567890">
+
+                        <!-- UAN + PF No row -->
+                        <div class="row row-spacing">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="esi" class="form-label">ESI Number</label>
+                                    <input type="text" class="form-control" id="esi" placeholder="e.g., 1234567890001234">
+                                    <div class="help-text">Employee State Insurance Number</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="bank" class="form-label"><i class="fas fa-university"></i> Bank Account
+                                        Number</label>
+                                    <input type="text" class="form-control" id="bank" placeholder="e.g., 1234567890">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="esi" class="form-label">ESI Number</label>
+                                    <input type="text" class="form-control" id="esi"
+                                        placeholder="e.g., 1234567890001234">
+                                    <div class="help-text">Employee State Insurance Number</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="bank" class="form-label"><i class="fas fa-university"></i> Bank Account
+                                        Number</label>
+                                    <input type="text" class="form-control" id="bank" placeholder="e.g., 1234567890">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -212,7 +227,6 @@
                                 <input type="number" class="form-control" id="other" readonly>
                             </div>
                         </div>
-
                     </div>
 
                     <!-- Result Section -->
@@ -221,8 +235,8 @@
                             <div class="card p-3">
                                 <h5 class="mb-3">Salary Summary</h5>
                                 <p><strong>Gross Salary:</strong> ₹ <span id="gross"></span></p>
-                                <p><strong>Employee PF (12%):</strong> ₹ <span id="empPF"></span></p>
-                                <p><strong>Employer PF (12%):</strong> ₹ <span id="employerPF"></span></p>
+                                <p id="empPFRow"><strong>Employee PF (12%):</strong> ₹ <span id="empPF"></span></p>
+                                <p id="employerPFRow"><strong>Employer PF (12%):</strong> ₹ <span id="employerPF"></span></p>
                                 <p><strong>Professional Tax:</strong> ₹ <span id="professionalTax"></span></p>
                                 <p><strong>Net Salary:</strong> ₹ <span id="netSal"></span></p>
 
